@@ -1,0 +1,22 @@
+{
+  "name": "@uuz.io/ews-javascript-api-auth",
+  "version": "1.0.2",
+  "description": "ews-javascript-api-auth",
+  "main": "dist.js",
+  "scripts": {
+    "build": "babel index.js -o dist.js --presets=env",
+    "postpublish": "babel index.js -o dist.js --presets=env"
+  },
+  "author": "shyling<i@shyling.com>",
+  "license": "Apache2.0",
+  "dependencies": {
+    "node-libcurl": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  },
+  "files": [
+    "dist.js"
+  ]
+}
