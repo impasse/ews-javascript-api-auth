@@ -44,6 +44,7 @@ class Authorization {
             curl.setOpt(Curl.option.URL, url);
             curl.setOpt(Curl.option.FOLLOWLOCATION, true);
             curl.setOpt(Curl.option.HTTPHEADER, Object.keys(headers).map(k => `${k}: ${headers[k]}`));
+            curl.setOpt(Curl.option.HTTPAUTH, Curl.auth.NTLM);
             curl.setOpt(Curl.option.USERNAME, this.username);
             curl.setOpt(Curl.option.PASSWORD, this.password);
             if (!this.sslVerify) {
@@ -89,6 +90,7 @@ class Authorization {
             curl.setOpt(Curl.option.FOLLOWLOCATION, true);
             curl.setOpt(Curl.option.TCP_KEEPALIVE, true);
             curl.setOpt(Curl.option.HTTPHEADER, Object.keys(headers).map(k => `${k}: ${headers[k]}`));
+            curl.setOpt(Curl.option.HTTPAUTH, Curl.auth.NTLM);
             curl.setOpt(Curl.option.USERNAME, this.username);
             curl.setOpt(Curl.option.PASSWORD, this.password);
             if (!this.sslVerify) {
