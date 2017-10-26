@@ -36,6 +36,9 @@ class Authorization {
 
     xhr(xhroptions, progressDelegate) {
         const { type = 'GET', url, headers = {}, data } = xhroptions;
+        if (headers.Authorization) {
+            delete headers.Authorization;
+        }
         return new Promise((resolve, reject) => {
             const curl = new Curl();
             curl.setOpt(Curl.option.URL, url);
@@ -76,6 +79,9 @@ class Authorization {
 
     xhrStream(xhroptions, progressDelegate) {
         const { type = 'GET', url, headers = {}, data } = xhroptions;
+        if (headers.Authorization) {
+            delete headers.Authorization;
+        }
         return new Promise((resolve, reject) => {
             const curl = new Curl();
             this.curl = curl;
