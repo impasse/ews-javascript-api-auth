@@ -67,12 +67,12 @@ class Authorization {
                 reject(err);
             });
             curl.on('end', (statusCode, body, headers) => {
+                curl.close();
                 if (statusCode === 200) {
                     resolve(setupResponse(statusCode, body, headers));
                 } else {
                     reject(setupResponse(statusCode, body, headers));
                 }
-                curl.close();
             });
             curl.perform();
         });
